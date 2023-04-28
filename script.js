@@ -22,6 +22,9 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('body').style.backgroundColor = '#60b347';
       document.querySelector('.number').style.width = '30rem';
       document.querySelector('.number').textContent = secretNumber;
+      if (score > document.querySelector('.label-highscore').textContent) {
+        document.querySelector('.label-highscore').textContent;
+      }
     }
   } else if (guess > secretNumber) {
     if (score > 0) {
@@ -40,4 +43,11 @@ document.querySelector('.check').addEventListener('click', function () {
     }
     document.querySelector('.score').textContent = score;
   }
+});
+document.querySelector('.again').addEventListener('click', function () {
+  score = 20;
+  document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.guess').value = null;
 });
